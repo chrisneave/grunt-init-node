@@ -62,7 +62,8 @@ exports.template = function(grunt, init, done) {
       'grunt-clear': '~0.2.1',
       'grunt-istanbul-coverage': '~0.0.2',
       'grunt-contrib-clean': '~0.5.0',
-      'grunt-open': '~0.2.2'
+      'grunt-open': '~0.2.2',
+      'grunt-simple-mocha': '~0.4.0'
     };
     props.travis = /y/i.test(props.travis);
 
