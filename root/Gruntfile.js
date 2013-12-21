@@ -54,13 +54,13 @@ module.exports = function(grunt) {
           lines: 90,
           functions: 90
         },
-        dir: 'build/coverage'
+        dir: 'coverage'
       }
     },
     clean: ['coverage'],
     open: {
       cover: {
-        path: 'build/coverage/lcov-report/index.html',
+        path: 'coverage/lcov-report/index.html',
         app: 'Google Chrome'
       }
     }
@@ -77,5 +77,18 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'simplemocha']);
-  grunt.registerTask('cover', ['clear', 'clean', 'istanbul', 'open:cover']);
+  grunt.registerTask('cover', ['clean', 'istanbul', 'open:cover']);
+
+  // Run mocha tests while also generating code coverage using istanbul
+  grunt.registerTask('istanbul', 'Generate coverage using istanbul from mocha tests', function() {
+    var done = this.async();
+
+    var server = grunt.util.spawn({
+      cmd: './node_modules/.bin/istanbul',
+      args: ['cover', '_mocha', '--']
+    }, done);
+
+    server.stdout.pipe(process.stdout);
+    server.stderr.pipe(process.stderr);
+  });
 };
