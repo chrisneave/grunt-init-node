@@ -83,5 +83,4 @@ exports.template = function(grunt, init, done) {
     // All done!
     done();
   });
-
 };
