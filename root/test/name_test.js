@@ -1,5 +1,6 @@
 'use strict';
 
+var expect = require('chai').expect;
 var {%= js_test_safe_name %} = require('../lib/{%= name %}.js');
 
 /*
@@ -34,3 +35,9 @@ exports['awesome'] = {
     test.done();
   },
 };
+
+describe('{%= name %}', function() {
+  it('should be awesome', function() {
+    expect({%= js_test_safe_name %}.awesome()).to.be('awesome');
+  });
+});
