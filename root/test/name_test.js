@@ -38,6 +38,6 @@ exports['awesome'] = {
 
 describe('{%= name %}', function() {
   it('should be awesome', function() {
-    expect({%= js_test_safe_name %}.awesome()).to.be('awesome');
+    expect({%= js_test_safe_name %}.awesome()).to.equal('awesome');
   });
 });
