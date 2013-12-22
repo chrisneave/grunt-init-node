@@ -46,17 +46,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    coverage: {
-      options: {
-        thresholds: {
-          statements: 90,
-          branches: 90,
-          lines: 90,
-          functions: 90
-        },
-        dir: 'coverage'
-      }
-    },
     clean: ['coverage'],
     open: {
       cover: {
@@ -71,7 +60,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-simple-mocha');
-  grunt.loadNpmTasks('grunt-istanbul-coverage');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-open');
 

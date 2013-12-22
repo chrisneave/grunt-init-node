@@ -60,7 +60,6 @@ exports.template = function(grunt, init, done) {
       'chai': '~1.8.1',
       'istanbul': '~0.1.46',
       'grunt-clear': '~0.2.1',
-      'grunt-istanbul-coverage': '~0.0.2',
       'grunt-contrib-clean': '~0.5.0',
       'grunt-open': '~0.2.2',
       'grunt-simple-mocha': '~0.4.0'
