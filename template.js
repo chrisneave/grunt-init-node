@@ -80,7 +80,16 @@ exports.template = function(grunt, init, done) {
     // Generate package.json file.
     init.writePackageJSON('package.json', props);
 
-    // All done!
-    done();
+    grunt.log.header('Installing packages using npm');
+    var exec = require('child_process').exec;
+    var cmd = exec('npm install', {}, function(err, stdout, stderr) {
+      if (err) {
+        grunt.fail.fatal(err);
+      } else {
+        grunt.log.ok('All done.');
+      }
+
+      done();
+    });
   });
 };
